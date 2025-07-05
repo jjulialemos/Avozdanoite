@@ -1,0 +1,246 @@
+const tarotCartas = [
+  {
+    tipo: "maior",
+    nome: "O Louco",
+    significado: "Início de uma jornada, liberdade, espontaneidade, fé no desconhecido.",
+    mensagem: "A Voz da Noite sussurra: ouse saltar, mesmo sem saber onde vai cair.",
+    amor: "Amores novos, aventuras inesperadas ou relações livres.",
+    trabalho: "Ousadia para mudar, abrir um novo ciclo ou começar do zero.",
+    espiritualidade: "Entrega total à jornada espiritual, confiança no universo.",
+    futuro: "Imprevisibilidade com potencial de liberdade.",
+    sombra: "Fuga da realidade, imaturidade ou decisões impulsivas."
+  },
+  {
+    tipo: "maior",
+    nome: "O Mago",
+    significado: "Poder de manifestar, habilidade, iniciativa, controle do próprio destino.",
+    mensagem: "A Voz da Noite diz: tudo o que você precisa já está dentro de você.",
+    amor: "Encantamento, poder de sedução, início promissor.",
+    trabalho: "Capacidade de criar oportunidades, inovação.",
+    espiritualidade: "Canalização de forças, domínio da energia vital.",
+    futuro: "Você molda o que virá com suas ações conscientes.",
+    sombra: "Manipulação, uso indevido do poder, ilusão."
+  },
+  {
+    tipo: "maior",
+    nome: "A Sacerdotisa",
+    significado: "Mistério, intuição, sabedoria oculta, silêncio fértil.",
+    mensagem: "A Voz da Noite murmura: ouça o que não é dito, sinta o que não é visto.",
+    amor: "Conexões espirituais, relacionamentos secretos ou não revelados.",
+    trabalho: "Estratégia silenciosa, gestação de ideias.",
+    espiritualidade: "Mergulho no inconsciente, conexão com o sagrado feminino.",
+    futuro: "Respostas virão por meio do silêncio e da intuição.",
+    sombra: "Repressão, segredos perigosos, passividade excessiva."
+  },
+  {
+    tipo: "maior",
+    nome: "A Imperatriz",
+    significado: "Fertilidade, beleza, criatividade, poder feminino.",
+    mensagem: "A Voz da Noite diz: cultive sua abundância interior e ela florescerá.",
+    amor: "Relacionamento próspero, sensualidade, maternidade.",
+    trabalho: "Fase produtiva, colheita, criatividade em alta.",
+    espiritualidade: "Alinhamento com as forças naturais e ciclos da vida.",
+    futuro: "Crescimento e expansão estão a caminho.",
+    sombra: "Excesso de controle, vaidade, dependência emocional."
+  },
+  {
+    tipo: "maior",
+    nome: "O Imperador",
+    significado: "Estabilidade, estrutura, liderança, autoridade.",
+    mensagem: "A Voz da Noite afirma: assuma o trono do seu próprio destino.",
+    amor: "Relacionamento sólido, mas possivelmente rígido.",
+    trabalho: "Sucesso com disciplina, gestão e planejamento.",
+    espiritualidade: "Força de vontade aplicada ao caminho espiritual.",
+    futuro: "Ordem será restaurada. Fundamentos serão firmados.",
+    sombra: "Autoritarismo, rigidez, repressão emocional."
+  },
+  {
+    tipo: "maior",
+    nome: "O Hierofante",
+    significado: "Tradição, sabedoria espiritual, ensino, rituais.",
+    mensagem: "A Voz da Noite sussurra: escute os mestres que falam através do tempo.",
+    amor: "Compromissos sérios, relacionamentos abençoados.",
+    trabalho: "Seguir padrões, respeito a estruturas hierárquicas.",
+    espiritualidade: "Busca por sentido em tradições e doutrinas.",
+    futuro: "Alinhamento com caminhos espirituais e sociais seguros.",
+    sombra: "Dogmatismo, repressão por normas, falta de autenticidade."
+  },
+  {
+    tipo: "maior",
+    nome: "Os Enamorados",
+    significado: "Escolha, amor, conexão, dualidade.",
+    mensagem: "A Voz da Noite pergunta: o que seu coração escolhe, mesmo no silêncio da razão?",
+    amor: "Relacionamentos importantes, paixão verdadeira ou decisões sentimentais.",
+    trabalho: "Escolha entre dois caminhos ou projetos.",
+    espiritualidade: "Integração do eu interior com o eu exterior.",
+    futuro: "Encontro significativo ou decisão transformadora.",
+    sombra: "Indecisão, triângulos amorosos, escolhas erradas."
+  },
+  {
+    tipo: "maior",
+    nome: "O Carro",
+    significado: "Determinação, conquista, domínio das emoções e direções.",
+    mensagem: "A Voz da Noite grita: avance sem medo, pois você é o condutor da sua vontade.",
+    amor: "Relacionamentos intensos que avançam rápido.",
+    trabalho: "Êxito, reconhecimento, controle do caminho profissional.",
+    espiritualidade: "Domínio dos opostos internos.",
+    futuro: "Vitória em algo disputado ou desafiante.",
+    sombra: "Arrogância, impulsividade, controle excessivo."
+  },
+  {
+    tipo: "maior",
+    nome: "A Força",
+    significado: "Coragem interior, domínio emocional, delicadeza poderosa.",
+    mensagem: "A Voz da Noite sussurra: a verdadeira força é aquela que acalma a fera sem feri-la.",
+    amor: "Relacionamento equilibrado por maturidade emocional.",
+    trabalho: "Superação de obstáculos com graça.",
+    espiritualidade: "Poder interior em harmonia com o divino.",
+    futuro: "Você será testado e sairá mais forte.",
+    sombra: "Domínio forçado, repressão, fraqueza emocional oculta."
+  },
+  {
+    tipo: "maior",
+    nome: "O Eremita",
+    significado: "Busca interior, sabedoria solitária, pausa necessária.",
+    mensagem: "A Voz da Noite ilumina com a lanterna do silêncio e da introspecção.",
+    amor: "Necessidade de solidão ou reflexão sobre o amor.",
+    trabalho: "Pausa estratégica, análise profunda.",
+    espiritualidade: "Busca por verdade interior, iluminação pessoal.",
+    futuro: "Momento de recolhimento e clareza.",
+    sombra: "Isolamento excessivo, medo de se abrir."
+  },
+  {
+    tipo: "maior",
+    nome: "A Roda da Fortuna",
+    significado: "Mudança de ciclos, destino, sorte, movimento.",
+    mensagem: "A Voz da Noite gira a roda: o que sobe pode descer, e vice-versa.",
+    amor: "Mudanças repentinas nos relacionamentos, reencontros ou rompimentos.",
+    trabalho: "Novas oportunidades ou reviravoltas inesperadas.",
+    espiritualidade: "Compreensão dos ciclos cármicos.",
+    futuro: "Destino em ação, virada significativa.",
+    sombra: "Resistência à mudança, instabilidade, ciclos repetitivos."
+  },
+  {
+    tipo: "maior",
+    nome: "A Justiça",
+    significado: "Equilíbrio, verdade, decisões justas, consequências.",
+    mensagem: "A Voz da Noite pesa: tudo o que você fez está sendo considerado.",
+    amor: "Relacionamentos baseados em justiça, equilíbrio ou cobranças.",
+    trabalho: "Assinatura de contratos, resolução de conflitos.",
+    espiritualidade: "Busca por retidão e integridade espiritual.",
+    futuro: "A verdade virá à tona. O que é justo prevalecerá.",
+    sombra: "Frieza, julgamento severo, parcialidade."
+  },
+  {
+    tipo: "maior",
+    nome: "O Enforcado",
+    significado: "Rendição, pausa forçada, nova perspectiva, sacrifício.",
+    mensagem: "A Voz da Noite sussurra: pare, suspenda-se, veja diferente.",
+    amor: "Relações estagnadas ou com necessidade de renúncia.",
+    trabalho: "Esperas, sacrifícios por algo maior.",
+    espiritualidade: "Rendição ao fluxo do destino.",
+    futuro: "Mudança de visão. Iluminação pela espera.",
+    sombra: "Apatia, martírio desnecessário, vitimismo."
+  },
+  {
+    tipo: "maior",
+    nome: "A Morte",
+    significado: "Transformação profunda, fim de ciclos, renascimento.",
+    mensagem: "A Voz da Noite corta: o que deve morrer para o novo nascer?",
+    amor: "Términos dolorosos ou renascimentos intensos.",
+    trabalho: "Encerramento de fase, mudança drástica.",
+    espiritualidade: "Desapego, regeneração da alma.",
+    futuro: "Fim inevitável com promessa de renovação.",
+    sombra: "Resistência à mudança, estagnação, medo do novo."
+  },
+  {
+    tipo: "maior",
+    nome: "A Temperança",
+    significado: "Equilíbrio, paciência, cura, alquimia interior.",
+    mensagem: "A Voz da Noite verte as águas: misture com sabedoria.",
+    amor: "Relacionamento equilibrado, reconciliação, cura emocional.",
+    trabalho: "Cooperação, adaptação e fluidez.",
+    espiritualidade: "Harmonia entre corpo, mente e espírito.",
+    futuro: "Resultado positivo através da moderação.",
+    sombra: "Estagnação, indecisão, negligência de extremos."
+  },
+  {
+    tipo: "maior",
+    nome: "O Diabo",
+    significado: "Desejo, obsessão, vícios, prisão emocional.",
+    mensagem: "A Voz da Noite adverte: o que te prende, é real ou é ilusão?",
+    amor: "Relacionamentos tóxicos, paixão avassaladora.",
+    trabalho: "Ambição desmedida, manipulação.",
+    espiritualidade: "Enfrentamento da sombra interior.",
+    futuro: "Ilusões sedutoras, aprisionamento psíquico.",
+    sombra: "Codependência, vícios, negação da verdade."
+  },
+  {
+    tipo: "maior",
+    nome: "A Torre",
+    significado: "Colapso de estruturas, verdade revelada, libertação.",
+    mensagem: "A Voz da Noite ruge: o que foi construído sobre mentira, cairá.",
+    amor: "Ruptura, revelações súbitas.",
+    trabalho: "Crise inesperada que leva à reconstrução.",
+    espiritualidade: "Despertar abrupto, ego desconstruído.",
+    futuro: "Choque necessário para recomeço.",
+    sombra: "Negação do inevitável, colapsos evitáveis."
+  },
+  {
+    tipo: "maior",
+    nome: "A Estrela",
+    significado: "Esperança, cura, inspiração, conexão divina.",
+    mensagem: "A Voz da Noite brilha: siga a luz que há dentro de você.",
+    amor: "Renovação de sentimentos, encontros guiados.",
+    trabalho: "Projetos criativos, fé no propósito.",
+    espiritualidade: "Guia espiritual, reconexão com o divino.",
+    futuro: "Bênçãos e clareza surgirão.",
+    sombra: "Expectativas irreais, fuga para ilusões."
+  },
+  {
+    tipo: "maior",
+    nome: "A Lua",
+    significado: "Mistério, ilusão, medos inconscientes, sensibilidade.",
+    mensagem: "A Voz da Noite sussurra por trás do véu: confie na sua intuição.",
+    amor: "Relacionamentos confusos, sentimentos ocultos.",
+    trabalho: "Situações nebulosas, enganos possíveis.",
+    espiritualidade: "Viagem pelo inconsciente, sonhos vívidos.",
+    futuro: "Nem tudo está claro. Siga com cautela.",
+    sombra: "Autoengano, medo, paranoia emocional."
+  },
+  {
+    tipo: "maior",
+    nome: "O Sol",
+    significado: "Alegria, sucesso, clareza, realização.",
+    mensagem: "A Voz da Noite sorri: brilhe sem medo, pois a luz é sua herança.",
+    amor: "Relacionamentos alegres, crianças, felicidade compartilhada.",
+    trabalho: "Reconhecimento, conquistas.",
+    espiritualidade: "Consciência iluminada, alegria interior.",
+    futuro: "Resultados positivos, prosperidade.",
+    sombra: "Egocentrismo, excesso de otimismo, exposição exagerada."
+  },
+  {
+    tipo: "maior",
+    nome: "O Julgamento",
+    significado: "Ressurreição, perdão, revelação, libertação kármica.",
+    mensagem: "A Voz da Noite chama: desperte, pois seu espírito lembra quem você é.",
+    amor: "Retornos, reconciliações, segundas chances.",
+    trabalho: "Reconhecimento, chamado para uma nova missão.",
+    espiritualidade: "Despertar da alma, conexão com propósito maior.",
+    futuro: "Ressignificação e recomeço conscientes.",
+    sombra: "Negação de responsabilidades, julgamento excessivo."
+  },
+  {
+    tipo: "maior",
+    nome: "O Mundo",
+    significado: "Conclusão, realização, totalidade, integração.",
+    mensagem: "A Voz da Noite encerra: você completou o ciclo, celebre sua plenitude.",
+    amor: "Relacionamento maduro, equilíbrio e sintonia.",
+    trabalho: "Sucesso e reconhecimento global.",
+    espiritualidade: "União com o todo, iluminação plena.",
+    futuro: "Ciclo concluído com maestria.",
+    sombra: "Sensação de vazio pós-conquista, medo de novos começos."
+  }
+];
+
+export default tarotCartas;
